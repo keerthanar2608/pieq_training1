@@ -2,7 +2,7 @@
 
 
 # Training_day1 (22/07/2025)
-## Object Oreinted Programming :
+## Object Oriented Programming :
 
 #### 1.Classes
 #### 2.Objects
