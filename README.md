@@ -11,8 +11,8 @@
 #### 5.Inheritance
 #### 6.Abstraction
 
-
-#### 1.Classes:
+ #### 1.Classes:
+ 
     Classes are the user defined data type and it is a template or a blueprint of objects.
     It provides variables and methods that are common to all objects in a particular file or program
 For example : Let us take student as an example.
@@ -53,6 +53,7 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________________________________________________                      
 
 #### 5.Inheritance:
+
     The inheritance means , one class can inherit the property of another class which is nothing but the child class can access the property of parent class 
     It mainly produces coe reusability.
     => Types of Inheritance:
