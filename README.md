@@ -4,8 +4,8 @@
 # Training_day1 (22/07/2025)
 Object Oreinted Programming :
 
-1.Classes
-2.Objects
+#### 1.Classes
+#### 2.Objects
 3.Encapsulation
 4.Polymorphism
 5.Inheritance
