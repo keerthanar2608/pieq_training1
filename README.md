@@ -1,7 +1,7 @@
 # pieq_training1
 
 
-#Training_day1 (22/07/2025)
+# Training_day1 (22/07/2025)
 Object Oreinted Programming :
 
 1.Classes
