@@ -14,7 +14,7 @@ Object Oreinted Programming :
 *******************************************************************************************************************************************************************
 
 
-1.Classes:
+#1.Classes:
     Classes are the user defined data type and it is a template or a blueprint of objects.
     It provides variables and methods that are common to all objects in a particular file or program
 For example : Let us take student as an example.
@@ -43,6 +43,7 @@ ________________________________________________________________________________
  _______________________________________________________________________________________________________________________________________________________________
   
 4.Polymorphism :
+
   =>The polymorphism means , it can be in many form (multiple forms).
   =>It enables the same method name to behave differently depending on the context.
   => The polymorphism is of two types:
