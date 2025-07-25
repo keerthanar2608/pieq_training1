@@ -1,0 +1,39 @@
+import kotlin.random.Random
+
+fun main() {
+    val size = 50
+    val arr = Array(size) {
+        Random.nextInt(0, 1001)
+    }
+    val ls = mutableListOf<String>()
+
+    println("Original array:")
+    for (i in 0 until size) {
+        print("${arr[i]} ")
+    }
+
+
+    for (i in 0 until 25) {
+        val randomIndex = Random.nextInt(0, size)
+        if (arr[randomIndex] == 0) {
+            ls.add("Duplicate index: $randomIndex")
+        } else {
+            arr[randomIndex] = 0
+        }
+    }
+    
+    ls.clear()
+
+    for (i in 0 until size) {
+        if (arr[i] != 0) {
+            ls.add(arr[i].toString())
+        }
+    }
+
+    println("\nFinal list:")
+    for (i in 0 until ls.size) {
+        print("${ls[i]} ")
+    }
+
+
+}
