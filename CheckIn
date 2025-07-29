@@ -30,13 +30,14 @@ fun CheckedIn (employeeId: Int){
     }
     val AlreadyCheckedIn = CheckInList.any{ it.EmployeeId == employeeId}
     if(AlreadyCheckedIn){
-        println(" ${employee.FirstName} ${employee.LastName},whose EmployeedID $employeeId is already checked In")
+        println("Employee ID ${employee.EmployeeId} : ${employee.FirstName} ${employee.LastName} has already checked In")
     }
     else{
         val checkInEntry = CheckIn(employeeId, LocalDate.now() , LocalTime.now())
         val formattedTime = checkInEntry.CheckInTime.format(DateTimeFormatter.ofPattern("HH:mm:ss"))
         CheckInList.add(checkInEntry)
-        println("${employee.FirstName} ${employee.LastName} is checked in ${checkInEntry.CheckInDate} at $formattedTime")    }
+        println("Employee ID ${employee.EmployeeId}: ${employee.FirstName} ${employee.LastName} checked in on ${checkInEntry.CheckInDate} at $formattedTime.")
+    }
 }
 
 fun validate(employeeId: Int) : Employee ?{
