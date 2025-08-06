@@ -1,78 +1,71 @@
-# pieq_training1
+##  Features
+
+- `feat: validateEmployee` – Checks whether an employee exists in the system
+- `feat: recordCheckIn` – Logs employee check-in with date and time
+- `feat: recordCheckOut` – Logs check-out and calculates working hours
 
 
-# Training_day1 (22/07/2025)
-## Object Oreinted Programming :
 
-#### 1.Classes
-#### 2.Objects
-#### 3.Encapsulation
-#### 4.Polymorphism
-#### 5.Inheritance
-#### 6.Abstraction
+# Data class
+ `DataEmployee`
+Represents the details of an employee in the system.
 
- #### 1.Classes:
- 
-    Classes are the user defined data type and it is a template or a blueprint of objects.
-    It provides variables and methods that are common to all objects in a particular file or program
-For example : Let us take student as an example.
-The student class can contains name , rollno , age . This is the template or blueprint of the student class
+id: Int – Unique employee ID
 
-_____________________________________________________________________________________________________________________________________________________________
+FirstName: String – Employee’s first name
 
-#### 2.Object:
+LastName: String – Employee’s last name
 
-   Object are the instances of classes. The object is used to give actual value for the variables that is declared in class 
-For the same example , The arguments passed to student class such as student("keerthu" , 12 , 20) 
-=> st1 = new  student("keerthu" , 12 , 20) 
+Role: String – Job title or position
 
-Here , the new keyword is the keyword which is used to create a memory and allocate those values .
-once the object is created , the memory will not be allocated . the memory will be created only when new keyword is declared.
+ReportingTo: Int? – (Optional) ID of the manager they report to; can be null if none
 
-_________________________________________________________________________________________________________________________________________________________________
+ `DataAttendance`
+Represents daily attendance information for one employee.
 
-#### 3.Encapsulation :
+EmployeeId: Int – ID of the employee this record belongs to
 
-   The Encapsulation is wrapping or joining the data members and functions together.
-   It is the one which is used for secured purpose . it can be done by declaring a class as private.
-   Once a class is declared as private , then it cannot be accessed by any other classes . 
-   But in case to access that class , encapsulation provides getter and setter methods to securely use.
+CheckInDate: LocalDate – Date of check-in
 
- _______________________________________________________________________________________________________________________________________________________________
-  
-#### 4.Polymorphism :
+CheckInTime: LocalTime – Time of check-in
 
-  =>The polymorphism means , it can be in many form (multiple forms).
-  =>It enables the same method name to behave differently depending on the context.
-  => The polymorphism is of two types:
-          1.CompileTime polymorphism.
-                      =>Method overloading
-          2.Runtime polymorphism.
-                      =>Method overriding
+CheckOutTime: LocalTime? – (Optional) Time of check-out; null if not checked out yet
 
-_________________________________________________________________________________________________________________________________________________________________                      
+# FUNCTIONS:
+`validateEmployee(employeeId: Int): DataEmployee?`
+Checks if an employee with the given employeeId exists in the EmployeeList.
 
-#### 5.Inheritance:
+ Returns the corresponding DataEmployee if found
 
-    The inheritance means , one class can inherit the property of another class which is nothing but the child class can access the property of parent class 
-    It mainly produces coe reusability.
-    => Types of Inheritance:
-           =>Single inheritance
-           =>Multilevel inheritance
-           =>Multiple inheritance
-           =>Hybrid inheritance
-           =>Hierarchical inheritance
+ Returns null if the employee doesn’t exist
 
-____________________________________________________________________________________________________________________________________________________________________
+` hasAlreadyCheckedIn(employeeId: Int, date: LocalDate): Boolean`
+Checks if the employee with the given employeeId has already checked in on the specified date.
 
-#### 6.Abstraction:
-  The Abstraction means hiding the unnecessary or unrelevant details and providing only relevant details.
-  It reduces complexity of the program since it hide the irrelevant info
-  It can be acheived using abstarct classes and interface
-  Abstarct class :
-    > Partial implementation is done 
-    > it may contains abstarct methods or concrete methods
-  Inheritance :
-    > 100% percentage abstarction is done
-    > uses implements keyword
-    > cannot be instantiated
+Returns true if already checked in
+
+Returns false if not
+
+` recordCheckIn(employeeId: Int, checkInDateTime: LocalDateTime): DataAttendance`
+Records the employee’s check-in time and creates a new DataAttendance entry.
+
+Stores both the date and time of check-in
+
+Returns the created DataAttendance object
+
+` recordCheckOut(employeeId: Int, checkOutDateTime: LocalDateTime): Double?`
+Handles employee check-out logic. Returns total working hours if valid.
+
+If employee checked in and hasn’t checked out yet:
+
+Updates the record with check-out time
+
+Returns total working hours as a Double
+
+If no check-in is found:
+
+Returns null
+
+If already checked out:
+
+Returns -1.0
